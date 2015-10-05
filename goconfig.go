@@ -61,5 +61,9 @@ func checkPath(path string) string {
 		return yamltype
 	}
 
+	if strings.HasSuffix(path, hcltype) {
+		return hcltype
+	}
+
 	return unknowntype
 }
