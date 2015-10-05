@@ -1,4 +1,4 @@
-# goconfig
+# goconfig [![Build Status](https://travis-ci.org/saromanov/goconfig.svg?branch=master)](https://travis-ci.org/saromanov/goconfig)
 
 Simple loading of configuration from several formats
 
