@@ -41,3 +41,19 @@ func TestLoadYAML(t *testing.T) {
 		t.Errorf("Expected %s, found %s", "Doom", exp.Name)
 	}
 }
+
+func TestLoadHCL(t *testing.T) {
+	exp := Example{}
+	res := Load("./testdata/test1.hcl", &exp)
+	if res != nil {
+		t.Error("File not found")
+	}
+
+	if exp.Data != 7 {
+		t.Errorf("Expected %d, found %d", 7, exp.Data)
+	}
+
+	if exp.Name != "bar" {
+		t.Errorf("Expected %s, found %s", "bar", exp.Name)
+	}
+}
