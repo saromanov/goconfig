@@ -20,7 +20,7 @@ const (
 func Load(path string, item interface{}) error {
 	data, err := ioutil.ReadFile(path)
 	if err != nil {
-		return fmt.Errorf("Failed to load: %v", err)
+		return err
 	}
 
 	switch checkPath(path) {
@@ -52,6 +52,7 @@ func Load(path string, item interface{}) error {
 	}
 }
 
+//return type of file for loading
 func checkPath(path string) string {
 	if strings.HasSuffix(path, jsontype) {
 		return jsontype
